@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_16_214335) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_17_143342) do
+  create_table "addresses", force: :cascade do |t|
+    t.string "address1"
+    t.string "address2"
+    t.integer "addressable_id"
+    t.string "addressable_type"
+    t.string "city"
+    t.string "country"
+    t.datetime "created_at", null: false
+    t.float "lat"
+    t.float "lng"
+    t.string "title"
+    t.datetime "updated_at", null: false
+    t.string "zip"
+    t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "auth_token"
     t.datetime "created_at", null: false

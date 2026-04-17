@@ -1,0 +1,9 @@
+one:
+  title: "New address"
+  address1: "somewhere 6"
+  address2:
+  city: "Berlin"
+  zip: "13089"
+  country: "Germany"
+  lat: 10.00000
+  lng: 12.00000

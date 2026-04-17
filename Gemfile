@@ -51,5 +51,6 @@ group :development, :test do
   gem "rubocop-rails-omakase", require: false
 
   gem "vcr"
+  gem "mocha"
   gem "webmock"
 end
