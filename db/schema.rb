@@ -19,9 +19,12 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_17_143342) do
     t.string "city"
     t.string "country"
     t.datetime "created_at", null: false
+    t.string "directions"
     t.float "lat"
     t.float "lng"
+    t.boolean "primary", default: false
     t.string "title"
+    t.string "type"
     t.datetime "updated_at", null: false
     t.string "zip"
     t.index ["addressable_type", "addressable_id"], name: "index_addresses_on_addressable"

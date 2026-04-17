@@ -40,4 +40,23 @@ class AddressTest < ActiveSupport::TestCase
     assert_not @address.valid?
     assert_includes @address.errors[:city], "is too short (minimum is 2 characters)"
   end
+
+  test "directions should be at least 8 characters" do
+    @address.directions = "short"
+    assert_not @address.valid?
+    assert_includes @address.errors[:directions], "is too short (minimum is 8 characters)"
+  end
+
+  test "directions should accept blank" do
+    @address.directions = nil
+    @address.addressable_type = @user.class.name.to_s
+    @address.addressable_id = @user.id
+    assert @address.valid?
+  end
+
+  test "directions should be max 200 characters" do
+    @address.directions = "a" * 201
+    assert_not @address.valid?, "Address should be invalid with > 200 chars"
+    assert_includes @address.errors[:directions], "is too long (maximum is 200 characters)"
+  end
 end

@@ -1,5 +1,6 @@
 one:
   title: "New address"
+  directions: "Near the corner"
   address1: "somewhere 6"
   address2:
   city: "Berlin"
